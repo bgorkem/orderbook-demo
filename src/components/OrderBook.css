@@ -1,0 +1,93 @@
+.order-book-container {
+  background: #1a1a1a;
+  color: #fff;
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+  background: #252525;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  text-align: right;
+}
+
+.asks,
+.bids {
+  flex: 1;
+  overflow: auto;
+}
+
+.virtual-list {
+  overflow: visible;
+}
+
+.order-book-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 4px 10px;
+  text-align: right;
+  position: relative;
+  transition: background-color 0.1s ease;
+}
+
+.order-book-row.sell:hover {
+  background-color: rgba(255, 68, 68, 0.2) !important;
+}
+
+.order-book-row.buy:hover {
+  background-color: rgba(0, 255, 0, 0.2) !important;
+}
+
+.order-book-row.sell .price {
+  color: #ff4444;
+}
+
+.order-book-row.buy .price {
+  color: #00ff00;
+}
+
+.spread {
+  padding: 8px;
+  text-align: center;
+  background: #252525;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* Scrollbar styling */
+.asks::-webkit-scrollbar,
+.bids::-webkit-scrollbar {
+  width: 6px;
+}
+
+.asks::-webkit-scrollbar-track,
+.bids::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.asks::-webkit-scrollbar-thumb,
+.bids::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+.asks::-webkit-scrollbar-thumb:hover,
+.bids::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
